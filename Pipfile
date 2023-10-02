@@ -5,12 +5,16 @@ name = "pypi"
 
 [packages]
 django = "==4.2.5"
+djangorestframework = "~=3.14"
+djangorestframework-simplejwt = "~=5.2"
 psycopg2-binary = "==2.9.5"
+python-dotenv = "*"
 
 [dev-packages]
 black = "~=23.3"
 flake8 = "~=6.0"
 isort = "~=5.12"
+drf-yasg = "*"
 
 [requires]
 python_version = "3.11"
