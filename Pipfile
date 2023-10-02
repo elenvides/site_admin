@@ -7,6 +7,7 @@ name = "pypi"
 django = "==4.2.5"
 djangorestframework = "~=3.14"
 djangorestframework-simplejwt = "~=5.2"
+django-filter = "*"
 psycopg2-binary = "==2.9.5"
 python-dotenv = "*"
 

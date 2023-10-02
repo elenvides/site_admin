@@ -8,14 +8,15 @@ class Product(models.Model):
     offer_of_the_month = models.BooleanField(default=False)
     available = models.BooleanField(default=True)
     pickup = models.BooleanField(default=True)
-    short_description = models.TextField()
+    short_description = models.CharField(max_length=255)
     long_description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
     class Meta:
         db_table = "products"
+        ordering = ['-id']
 
-    def __str__(self) -> models.CharField:
+    def __str__(self):
         return self.name
 
 
@@ -24,6 +25,7 @@ class Category(models.Model):
 
     class Meta:
         db_table = "categories"
+        ordering = ['-id']
 
-    def __str__(self) -> models.CharField:
+    def __str__(self):
         return self.name
