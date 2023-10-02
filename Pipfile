@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==4.2.5"
+psycopg2-binary = "==2.9.5"
+
+[dev-packages]
+black = "~=23.3"
+flake8 = "~=6.0"
+isort = "~=5.12"
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.4"
