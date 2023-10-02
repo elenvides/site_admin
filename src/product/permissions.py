@@ -1,7 +1,5 @@
-from rest_framework import exceptions
 from rest_framework.permissions import BasePermission
 
-from product.models import Product
 from users.constants import Role
 
 

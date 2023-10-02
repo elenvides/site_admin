@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from product.models import Product, Category
+
+from product.models import Category, Product
 
 
 # only if you want to create categories with api. now - you can do it in Admin part.

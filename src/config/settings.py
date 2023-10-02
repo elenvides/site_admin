@@ -1,7 +1,8 @@
 import os
-from dotenv import load_dotenv
 from datetime import timedelta
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -127,9 +128,9 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 # where Django hold upload files
-MEDIA_ROOT = 'media'
+MEDIA_ROOT = "media"
 
-MEDIA_URL = '/media/'
+MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

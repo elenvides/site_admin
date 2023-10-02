@@ -1,8 +1,9 @@
 from django_filters import rest_framework as filters
-from rest_framework import viewsets, permissions
+from rest_framework import permissions, viewsets
+
 from product.models import Product
-from product.serializers import ProductSerializer
 from product.permissions import RoleIsAdmin, RoleIsManager
+from product.serializers import ProductSerializer
 
 
 class ProductFilter(filters.FilterSet):
@@ -12,7 +13,7 @@ class ProductFilter(filters.FilterSet):
 
     class Meta:
         model = Product
-        fields = ['offer_of_the_month', 'available', 'pickup']
+        fields = ["offer_of_the_month", "available", "pickup"]
 
 
 class ProductViewSet(viewsets.ModelViewSet):
@@ -26,11 +27,11 @@ class ProductViewSet(viewsets.ModelViewSet):
         """
         Instantiates and returns the list of permissions that this view requires.
         """
-        if self.action == 'list':
+        if self.action == "list":
             permission_classes = [permissions.IsAuthenticated]
-        elif self.action in ['create', 'update', 'partial_update']:
+        elif self.action in ["create", "update", "partial_update"]:
             permission_classes = [RoleIsAdmin | RoleIsManager]
-        elif self.action == 'destroy':
+        elif self.action == "destroy":
             permission_classes = [RoleIsAdmin]
         else:
             permission_classes = [permissions.IsAuthenticated]

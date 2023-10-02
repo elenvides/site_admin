@@ -4,7 +4,7 @@ from django.db import models
 class Product(models.Model):
     name = models.CharField(max_length=255)
     photo = models.URLField()
-    category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    category = models.ForeignKey("Category", on_delete=models.CASCADE)
     offer_of_the_month = models.BooleanField(default=False)
     available = models.BooleanField(default=True)
     pickup = models.BooleanField(default=True)
@@ -14,7 +14,7 @@ class Product(models.Model):
 
     class Meta:
         db_table = "products"
-        ordering = ['-id']
+        ordering = ["-id"]
 
     def __str__(self):
         return self.name
@@ -25,7 +25,7 @@ class Category(models.Model):
 
     class Meta:
         db_table = "categories"
-        ordering = ['-id']
+        ordering = ["-id"]
 
     def __str__(self):
         return self.name
