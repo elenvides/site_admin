@@ -12,6 +12,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
+    photo = serializers.ImageField(use_url=True)
 
     class Meta:
         model = Product
