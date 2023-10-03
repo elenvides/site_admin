@@ -11,6 +11,7 @@ django-filter = "*"
 psycopg2-binary = "==2.9.5"
 python-dotenv = "*"
 Pillow = "==9.2.0"
+requests = "*"
 
 [dev-packages]
 black = "~=23.3"
