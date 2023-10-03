@@ -10,9 +10,18 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class ProductSerializer(serializers.ModelSerializer):
+class ProductRequestSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
-    photo = serializers.ImageField(use_url=True)
+    photo = serializers.CharField(required=False)
+
+    class Meta:
+        model = Product
+        fields = "__all__"
+
+
+class ProductResponseSerializer(serializers.ModelSerializer):
+    category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
+    photo_url = serializers.ImageField(source="photo", use_url=True)
 
     class Meta:
         model = Product
